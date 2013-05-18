@@ -1,0 +1,64 @@
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="brand" href="#">Dealgeta</a>-->
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                       <li class="active"><a href="/"> <i class="icon-home icon-white"></i> Home</a></li>
+                        <li class="active"><a href="/">Local Deals</a></li>
+                        <li><a href="/tips/index.php"><img src="imgs/dealgeta.png" height="16" width="16">Tips</a></li>
+                          <li><a href="http://www.dealgeta.com">Savings Blog</a></li>
+                          <li><a href="http://www.amazon.com/gp/goldbox/?ie=UTF8&camp=1789&creative=390957&linkCode=ur2&tag=deal0b4-20"> <i class="icon-fire icon-white"></i> Daily Deals</a></li>
+                        <li class="pull-right" id="cont"><a href="contact.php"> Contact</a></li>
+                    </ul>
+                    <!--<a id="sign_in_alt" href="/signup.php">Sign up</a>-->
+                    <a id="sign_in_alt" href="/signup.php">Sign up</a> 
+                </div><!--/.nav-collapse  -->
+                <!--<a id="sign_in_alt" href="/signup.php">Sign up</a>--> 
+            </div>
+
+        </div>
+    </div>
+    <div class="divider"></div>
+ <?php if (!isset($_SESSION["username"])) { ?>
+ <div class="top-center" >
+
+        <a href="index.php"><img class="logo" src="imgs/logo.png" > </a>
+        <ul id="col-center"  >
+            <form action="/login.php" method="post" class="form-inline" style="float:right; padding: 25px">
+                <input type="text" class="input-small" id="username" name="username" placeholder="Username">
+                <input type="password" class="input-small" id="password" name="password"  placeholder="Password">
+                <label class="checkbox">
+                <!--<input type="checkbox"> Remember me-->
+                    <!--</label>-->
+                    <button type="submit" class="btn"  value="login" name="login">Sign in</button>
+            </form>
+           
+    </div>
+
+<?php } ?> 
+
+
+<?php if (isset($_SESSION["username"])) { ?>
+  <div class="top-center">
+
+       <a href="index.php"><img class="logo" src="imgs/logo.png" > </a>
+        <ul id="col-center">
+            <li class="ind_logout"><a class="upper_mid" href="/logout.php">Logout</a>&nbsp;&nbsp;</li>
+            <li class ="ind_new_post"><a class="upper_mid"href=" /post.php">New Post</a></li>
+            <li class="ind_settings">   <a class="upper_mid" href="/account.php">Account Settings</a></li>
+            <li class="ind_man_posts"> <a class="upper_mid" href="/newpostedit.php">Manage Posts</a></li>
+    </ul>
+        
+    </div>
+ 
+     
+<?php } ?> 
